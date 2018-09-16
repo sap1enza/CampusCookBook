@@ -5,3 +5,7 @@ class AddRecipeType < ActiveRecord::Migration[5.2]
   	end  		
   end
 end
+
+
+    # add_column :recipes, :ingredients, :strings
+    # add_column :recipes, :cook_method, :string
