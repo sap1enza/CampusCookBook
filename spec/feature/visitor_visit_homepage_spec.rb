@@ -12,7 +12,8 @@ feature 'Visitor visit homepage' do
     #cria os dados necessários
     recipe = Recipe.create(title: 'Bolo de cenoura', recipe_type: 'Sobremesa',
                            cuisine: 'Brasileira', difficulty: 'Médio',
-                           cook_time: 60)
+                           cook_time: 60, ingredients: 'Massa de bolo', 
+                           'Cenoura', cook_method: 'Assar bem')
 
     # simula a ação do usuário
     visit root_path
