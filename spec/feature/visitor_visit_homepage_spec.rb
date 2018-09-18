@@ -12,8 +12,7 @@ feature 'Visitor visit homepage' do
     #cria os dados necessários
     recipe = Recipe.create(title: 'Bolo de cenoura', recipe_type: 'Sobremesa',
                            cuisine: 'Brasileira', difficulty: 'Médio',
-                           cook_time: 60, ingredients: 'Massa de bolo', 
-                           'Cenoura', cook_method: 'Assar bem')
+                           cook_time: 60, ingredients: 'Cenouras' ,cook_method: 'Asse bem')
 
     # simula a ação do usuário
     visit root_path
@@ -30,12 +29,14 @@ feature 'Visitor visit homepage' do
     #cria os dados necessários
     recipe = Recipe.create(title: 'Bolo de cenoura', recipe_type: 'Sobremesa',
                            cuisine: 'Brasileira', difficulty: 'Médio',
-                           cook_time: 60)
+                           cook_time: 60, ingredients: 'Cenouras',
+                           cook_method: 'Asse bem')
 
     another_recipe = Recipe.create(title: 'Feijoada',
                                    recipe_type: 'Prato Principal',
                                    cuisine: 'Brasileira', difficulty: 'Difícil',
-                                   cook_time: 90)
+                                   cook_time: 90, ingredients: 'Cenouras',
+                                   cook_method: 'Asse bem')
 
     # simula a ação do usuário
     visit root_path

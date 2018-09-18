@@ -10,8 +10,7 @@ class RecipesController < ApplicationController
 	end
 
 	def create
-		@recipe = Recipe.new(params.require(:recipe).permit(:id,:title,:recipe_type,:cuisine,
-			:difficulty,:cook_time,:ingredients,:cook_method))
+		@recipe = Recipe.new(recipe_params)
 
 		if @recipe.save
 			redirect_to @recipe
@@ -20,6 +19,27 @@ class RecipesController < ApplicationController
 			redirect_to new_recipe_path
 		end
 
+	end
+
+	def edit
+		@recipe = Recipe.find(params[:id])
+	end
+
+	def update
+		@recipe = Recipe.find(params[:id])
+		if @recipe.update_attributes(recipe_params)
+			flash[:success] = "Receita atualizada"
+			redirect_to @recipe
+		else
+			flash[:alert] = "Preencha todos os campos"
+			redirect_to edit_recipe_path(@recipe)
+		end
+
+	end
+
+	def recipe_params
+		params.require(:recipe).permit(:id,:title,:recipe_type,:cuisine,
+			:difficulty,:cook_time,:ingredients,:cook_method)
 	end
 
 
