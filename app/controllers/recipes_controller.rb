@@ -15,7 +15,7 @@ class RecipesController < ApplicationController
 		if @recipe.save
 			redirect_to @recipe
 		else
-			flash[:alert] = "Preencha todos os campos"
+			flash[:alert] = "Você deve informar todos os dados da receita"
 			redirect_to new_recipe_path
 		end
 
@@ -31,7 +31,7 @@ class RecipesController < ApplicationController
 			flash[:success] = "Receita atualizada"
 			redirect_to @recipe
 		else
-			flash[:alert] = "Preencha todos os campos"
+			flash[:alert] = "Você deve informar todos os dados da receita"
 			redirect_to edit_recipe_path(@recipe)
 		end
 
