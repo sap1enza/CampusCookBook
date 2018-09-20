@@ -2,6 +2,10 @@
 	<%= flash[:success] %>
 </div>
 
+<% if @recipe.featured %>
+	<%= image_tag "star.png" %>
+<% end %>
+
 <h1><%= @recipe.title %></h1>
 <h3>Detalhes</h3>
 

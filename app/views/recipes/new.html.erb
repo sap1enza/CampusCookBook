@@ -21,6 +21,9 @@
 
 <%= form_for @recipe do |f| %>
 
+	<%= check_box_tag(:featured) %>
+	<%= label_tag(:featured, 'Marcar como destaque') %>
+
 	<%= f.label :title, 'Título' %>
 	<%= f.text_field :title %>
 	
