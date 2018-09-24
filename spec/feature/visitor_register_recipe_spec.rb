@@ -10,14 +10,16 @@ feature 'Visitor register recipe' do
   end
 
   scenario 'successfully' do
-    #cria os dados necessários, nesse caso não vamos criar dados no banco
+
+    RecipeType.create(name: 'Entrada')
 
     # simula a ação do usuário
     visit root_path
     click_on 'Enviar uma receita'
 
     fill_in 'Título', with: 'Tabule'
-    fill_in 'Tipo da Receita', with: 'Entrada'
+    # fill_in 'Tipo da Receita', with: 'Entrada'
+    select 'Entrada', from: 'Tipo da Receita'
     fill_in 'Cozinha', with: 'Arabe'
     fill_in 'Dificuldade', with: 'Fácil'
     fill_in 'Tempo de Preparo', with: '45'
