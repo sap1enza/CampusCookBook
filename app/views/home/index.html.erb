@@ -14,7 +14,7 @@
 		<ul>
 			<%= image_tag "star.png" %>
 			<li><%= f.recipe_type.name %></li>
-			<li><%= f.cuisine %></li>
+			<li><%= f.cuisine.name %></li>
 			<li><%= f.difficulty %></li>
 			<li><%= f.cook_time %> minutos</li>
 		</ul>
@@ -33,7 +33,7 @@
 		<h1><%= link_to(f.title, recipe_path(f)) %></h1>   
 		<ul>
 			<li><%= f.recipe_type.name %></li>
-			<li><%= f.cuisine %></li>
+			<li><%= f.cuisine.name %></li>
 			<li><%= f.difficulty %></li>
 			<li><%= f.cook_time %> minutos</li>
 		</ul>

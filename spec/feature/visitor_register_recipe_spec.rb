@@ -12,6 +12,7 @@ feature 'Visitor register recipe' do
   scenario 'successfully' do
 
     RecipeType.create(name: 'Entrada')
+    Cuisine.create(name: 'Arabe')
 
     # simula a ação do usuário
     visit root_path
@@ -20,7 +21,7 @@ feature 'Visitor register recipe' do
     fill_in 'Título', with: 'Tabule'
     # fill_in 'Tipo da Receita', with: 'Entrada'
     select 'Entrada', from: 'Tipo da Receita'
-    fill_in 'Cozinha', with: 'Arabe'
+    select 'Arabe', from: 'Cozinha'
     fill_in 'Dificuldade', with: 'Fácil'
     fill_in 'Tempo de Preparo', with: '45'
     fill_in 'Ingredientes', with: 'Trigo para quibe, cebola, tomate picado, azeite, salsinha'
