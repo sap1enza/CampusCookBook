@@ -15,6 +15,7 @@ class RecipesController < ApplicationController
 		if @recipe.save
 			redirect_to @recipe
 		else
+			flash[:alert] = "Tipo da imagem não é válido"
 			flash[:alert] = "Você deve informar todos os dados da receita"
 			redirect_to new_recipe_path
 		end
@@ -44,7 +45,7 @@ class RecipesController < ApplicationController
 	end
 
 	def recipe_params
-		params.require(:recipe).permit(:id,:title,:recipe_type_id,:cuisine_id,
+		params.require(:recipe).permit(:id, :photo, :title,:recipe_type_id,:cuisine_id,
 			:difficulty,:cook_time,:ingredients,:cook_method, :featured)
 	end
 

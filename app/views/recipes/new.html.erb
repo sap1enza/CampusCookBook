@@ -19,10 +19,13 @@
 <% end %>
 
 
-<%= form_for @recipe do |f| %>
+<%= form_for @recipe, html: { multipart: true } do |f| %>
 
 	<%= check_box_tag(:featured) %>
 	<%= label_tag(:featured, 'Marcar como destaque') %>
+
+	<%= f.label :photo, 'Foto da Receita' %>
+	<%= f.file_field :photo %>
 
 	<%= f.label :title, 'Título' %>
 	<%= f.text_field :title %>
